@@ -1,3 +1,3 @@
 # test-pipeline
 
-This is a test jenkins pipeline.
+This is a test Jenkins pipeline.
