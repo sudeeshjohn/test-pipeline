@@ -1,6 +1,7 @@
 pipeline {
-    agent docker {
-        image "busybox"
+    agent {
+        docker {
+            image "busybox"
     }
 }
     stages {
