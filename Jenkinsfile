@@ -11,7 +11,7 @@ pipeline {
             steps {
                 script {
                     docker.withRegistry('', 'dockerhub') {
-                        dockerImage.Push()
+                        sh "docker push pensu/test:${BUILD_NUMBER}"
                     }
                 }
             }
