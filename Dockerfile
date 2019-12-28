@@ -1,3 +1,3 @@
 FROM busybox
 
-RUN echo "Hello World!"
+CMD ["echo", "Hello World!"]
