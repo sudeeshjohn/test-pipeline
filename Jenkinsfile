@@ -7,5 +7,13 @@ pipeline {
                 sh "docker build -t test:${BUILD_NUMBER} ."
             }
         }
+        stage('Push') {
+            steps {
+                docker.withRegistry('https://hub.docker.com', 'dockerhub') {
+                    sh "docker login -u ${USERNAME} -p ${PASSWORD}"
+                    sh "docker push test:${BUILD_NUMBER}"
+                }
+            }
+        }
     }
 }
