@@ -2,14 +2,9 @@ pipeline {
     agent any
     
     stages {
-        stage ('Clone the repo') {
-            steps {
-                sh "rm -rf test-pipeline && git clone https://github.com/Pensu/test-pipeline"
-            }
-        }
         stage('Build') {
             steps {
-                sh "cd test-pipeline && docker build -t pensu/test:${BUILD_NUMBER} ."
+                sh "docker build -t pensu/test:${BUILD_NUMBER} ."
             }
         }
         stage('Test') {
