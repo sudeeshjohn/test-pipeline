@@ -1,3 +1,3 @@
 FROM busybox
 
-CMD ["echo", "DO!"]
+CMD ["echo", "Hello World!"]
