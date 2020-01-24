@@ -25,5 +25,10 @@ pipeline {
                 }
             }
         }
+        stage('slack notification') {
+            steps {
+                slackSend(channel: "#demo", message: "Build Completed: ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)", sendAsText: true)
+                }
+            }
     }
 }
